@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>scarabot</name>
+  <version>0.0.0</version>
+  <description>The Scarabot package</description>
+  <maintainer email="matteo.iervasi@studenti.univr.it">matteo</maintainer>
+  <license>TODO</license>
+  <author email="matteo.iervasi@studenti.univr.it">Matteo Iervasi</author>
+  <buildtool_depend>catkin</buildtool_depend>
+
+  <build_depend>geometry_msgs</build_depend>
+  <build_depend>roscpp</build_depend>
+  <build_depend>rospy</build_depend>
+  <build_depend>std_msgs</build_depend>
+  <build_depend>tf2</build_depend>
+  <build_depend>tf2_ros</build_depend>
+  <build_depend>tf2_geometry_msgs</build_depend>
+  <build_depend>tf</build_depend>
+
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>roscpp</exec_depend>
+  <exec_depend>rospy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+  <exec_depend>tf2</exec_depend>
+  <exec_depend>tf2_ros</exec_depend>
+  <exec_depend>tf</exec_depend>
+  <exec_depend>tf2_geometry_msgs</exec_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>

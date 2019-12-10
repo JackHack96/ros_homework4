@@ -1,0 +1,2 @@
+- setup-file:
+    local-name: /home/matteo/catkin_ws/src/scarabot/bin/devel/setup.sh

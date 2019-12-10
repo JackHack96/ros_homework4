@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+<robot name="scarabot">
+	<!-- Material nodes -->
+	<material name="blue">
+		<color rgba="0 0 1 1" />
+	</material>
+	<material name="red">
+		<color rgba="1 0 0 1" />
+	</material>
+	<material name="green">
+		<color rgba="0 1 0 1" />
+	</material>
+	<material name="yellow">
+		<color rgba="1 1 0 1" />
+	</material>
+	<!-- Link nodes -->
+	<link name="base_link">
+		<visual>
+			<geometry>
+				<cylinder length="0.1" radius="0.5" />
+			</geometry>
+			<origin xyz="0 0 0.05" />
+			<material name="yellow" />
+		</visual>
+	</link>
+	<link name="linkH">
+		<visual>
+			<geometry>
+				<box size="0.25 0.25 0.4" />
+			</geometry>
+			<material name="blue" />
+		</visual>
+	</link>
+	<link name="cyl1">
+		<visual>
+			<geometry>
+				<cylinder length="0.2" radius="0.125" />
+			</geometry>
+			<material name="green" />
+		</visual>
+	</link>
+	<link name="linkLi">
+		<visual>
+			<geometry>
+				<box size="0.3 0.2 0.2" />
+			</geometry>
+			<material name="blue" />
+		</visual>
+	</link>
+	<link name="cyl2">
+		<visual>
+			<geometry>
+				<cylinder length="0.15" radius="0.1" />
+			</geometry>
+			<material name="green" />
+		</visual>
+	</link>
+	<link name="linkLo">
+		<visual>
+			<geometry>
+				<box size="0.3 0.15 0.15" />
+			</geometry>
+			<material name="blue" />
+		</visual>
+	</link>
+	<link name="cyl3">
+		<visual>
+			<geometry>
+				<cylinder length="0.2" radius="0.1" />
+			</geometry>
+			<material name="green" />
+		</visual>
+	</link>
+	<link name="linkL4">
+		<visual>
+			<geometry>
+				<cylinder length="0.5" radius="0.05" />
+			</geometry>
+			<material name="red" />
+		</visual>
+	</link>
+	<!-- Joint nodes -->
+	<joint name="jointBase" type="fixed">
+		<parent link="base_link" />
+		<child link="linkH" />
+		<origin xyz="0 0 0.3"/>
+	</joint>
+	<joint name="jointHcyl1" type="revolute">
+		<parent link="linkH" />
+		<child link="cyl1" />
+		<origin xyz="0 0 0.3" />
+		<limit effort="1200" velocity="1.1" lower="-2.5" upper="2.5" />
+		<axis xyz="0 0 1" />
+	</joint>
+	<joint name="jointCyl1Li" type="fixed">
+		<parent link="cyl1" />
+		<child link="linkLi" />
+		<origin xyz="0.275 0 0" />
+	</joint>
+	<joint name="jointLiCyl2" type="revolute">
+		<parent link="linkLi" />
+		<child link="cyl2" />
+		<origin xyz="0.25 0 0" />
+		<limit effort="1000" velocity="0.9" lower="-2" upper="2" />
+		<axis xyz="0 0 1" />
+	</joint>
+	<joint name="jointCyl2Lo" type="fixed">
+		<parent link="cyl2" />
+		<child link="linkLo" />
+		<origin xyz="0.25 0 0" />
+	</joint>
+	<joint name="jointLoCyl3" type="revolute">
+		<parent link="linkLo" />
+		<child link="cyl3" />
+		<origin xyz="0.25 0 0" />
+		<limit effort="800" velocity="0.8" lower="-3" upper="3" />
+		<axis xyz="0 0 1" />
+	</joint>
+	<joint name="jointCyl3L4" type="prismatic">
+		<parent link="cyl3" />
+		<child link="linkL4" />
+		<origin xyz="0 0 0.2" rpy="3.14 0 0" />
+		<limit effort="900" velocity="1.6" lower="0" upper="0.45" />
+		<axis xyz="0 0 1" />
+	</joint>
+</robot>
